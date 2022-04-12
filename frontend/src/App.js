@@ -2,6 +2,7 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import Search from "./components/Search";
+import Footer from "./components/footer";
 
 // eslint-disable-next-line no-unused-vars
 const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY;
@@ -20,12 +21,14 @@ const App = () => {
     .catch((err) =>{
       console.log(err)
     })
+    setWord('');
   };
 
   return (
     <div>
-      <Header title="Images Gallery" />
+      <Header title="REACT DEVELOPMENT" />
       <Search word={word} setWord={setWord} handleSubmit={handleSearchSubmit} />
+      <Footer />
     </div>
   );
 };
