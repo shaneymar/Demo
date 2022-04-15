@@ -9,6 +9,9 @@ const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY;
 
 const App = () => {
   const [word, setWord] = useState("");
+  const [images, setImages] = useState([]);
+
+  console.log(images);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -16,7 +19,9 @@ const App = () => {
     fetch(`https://api.unsplash.com/photos/random?query=${word}&client_id=mEJmF_uDqL_kF-6NJugs_xH1JPLz9J_jPOsEkRVMOJU`)
     .then((res) =>res.json())
     .then((data) => {
-      console.log(data);
+      
+      setImages([data, ...images])
+      
     })
     .catch((err) =>{
       console.log(err)
