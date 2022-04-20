@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Search from "./components/Search";
 import ImageCard from "./components/ImageCard";
 import { Container, Row } from "react-bootstrap";
+import Welcome from "./components/Welcome";
 
 // eslint-disable-next-line no-unused-vars
 const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY;
@@ -39,13 +40,16 @@ const App = () => {
       <Header title="FINDLAW" />
       <Search word={word} setWord={setWord} handleSubmit={handleSearchSubmit} />
       <br/>
-      <Container>
+      <Container className="mt-4">
+        {images.length ? 
+        (
         <Row xs={1} md={3} lg={4}>
-      {images.map( (image, i) => ( 
-      <ImageCard key={i} image ={image} deleteImage = {handleDeleteImage} /> 
-      ))}
-     
-      </Row>
+          {images.map( (image, i) => ( 
+          <ImageCard key={i} image ={image} deleteImage = {handleDeleteImage} /> 
+          ))}
+         </Row> )
+          : ( <Welcome /> 
+          )}
       </Container>
     </div>
   );

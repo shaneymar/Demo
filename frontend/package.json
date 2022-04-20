@@ -25,7 +25,7 @@
       "react-app/jest"
     ]
   },
-  "prettier":{
+  "prettier": {
     "singleQuote": true
   },
   "browserslist": {
