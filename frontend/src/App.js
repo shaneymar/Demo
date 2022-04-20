@@ -37,13 +37,15 @@ const App = () => {
 
   return (
     <div>
-      <Header title="REACT DEVELOPMENT" />
+      <Header title="FINDLAW" />
       <Search word={word} setWord={setWord} handleSubmit={handleSearchSubmit} />
+      <br/>
       <Container>
         <Row xs={1} md={3} lg={4}>
       {images.map( (image, i) => ( 
       <ImageCard key={i} image ={image} deleteImage = {handleDeleteImage} /> 
       ))}
+     
       </Row>
       </Container>
       <Footer />
