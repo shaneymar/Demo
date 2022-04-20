@@ -5,7 +5,7 @@ import { Card, Button, Container, Row} from 'react-bootstrap';
 const ImageCard = ({image, deleteImage}) => {
    return(
  
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '18rem', minHeight: '420px'}}>
     <Card.Img variant="top" 
     src= {image.urls.small}
     />

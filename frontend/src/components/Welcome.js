@@ -1,10 +1,11 @@
 import React from 'react';
 import { Jumbotron, Button} from 'react-bootstrap';
+import '../css/Welcome.css';
 
 const Welcome = () => {
     return(
     <Jumbotron>
-  <h1>Hello Users</h1>
+  <h1>Images Gallery</h1>
   <p>
     This is a simple application that retrieves photo from unsplash.
   </p>

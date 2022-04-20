@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './css/index.css';
 import App from './App';
 import './css/footer.css';
+import './css/search.css';
+
+
 
 ReactDOM.render(
   <React.StrictMode>
