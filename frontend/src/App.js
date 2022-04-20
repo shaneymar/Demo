@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import Search from "./components/Search";
 import Footer from "./components/footer";
+import ImageCard from "./components/ImageCard";
+import { Container, Row } from "react-bootstrap";
 
 // eslint-disable-next-line no-unused-vars
 const UNSPLASH_KEY = process.env.REACT_APP_UNSPLASH_KEY;
@@ -20,7 +22,7 @@ const App = () => {
     .then((res) =>res.json())
     .then((data) => {
       
-      setImages([data, ...images])
+      setImages([{...data, title: word}, ...images])
       
     })
     .catch((err) =>{
@@ -29,10 +31,21 @@ const App = () => {
     setWord('');
   };
 
+  const handleDeleteImage = (id) =>{
+      setImages(images.filter((image) => image.id !== id))
+  };
+
   return (
     <div>
       <Header title="REACT DEVELOPMENT" />
       <Search word={word} setWord={setWord} handleSubmit={handleSearchSubmit} />
+      <Container>
+        <Row xs={1} md={3} lg={4}>
+      {images.map( (image, i) => ( 
+      <ImageCard key={i} image ={image} deleteImage = {handleDeleteImage} /> 
+      ))}
+      </Row>
+      </Container>
       <Footer />
     </div>
   );
