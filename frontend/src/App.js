@@ -2,7 +2,6 @@ import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import Search from "./components/Search";
-import Footer from "./components/footer";
 import ImageCard from "./components/ImageCard";
 import { Container, Row } from "react-bootstrap";
 
@@ -48,7 +47,6 @@ const App = () => {
      
       </Row>
       </Container>
-      <Footer />
     </div>
   );
 };
